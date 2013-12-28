@@ -10,17 +10,22 @@ mvn archetype:generate \
 
  cd testAppv6
 
- edit pom.xml and chage 
- <appengine.target.version>1.7.5</appengine.target.version>
+ edit pom.xml and change 
+
+                <appengine.target.version>1.7.5</appengine.target.version>
+
  to 
- <appengine.target.version>1.8.8</appengine.target.version>
+                <appengine.target.version>1.8.8</appengine.target.version>
 
 change jvm version from 1.6
+
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
+
 to 1.7
+
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
