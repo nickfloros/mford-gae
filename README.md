@@ -17,19 +17,19 @@ mvn archetype:generate \
  to 
                 <appengine.target.version>1.8.8</appengine.target.version>
 
-change jvm version from 1.6
+change jvm version from 
 
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
 
-to 1.7
+to 
 
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
+          <configuration>
+                <source>1.7</source>
+                <target>1.7</target>
+          </configuration>
                                 
 add
  
@@ -56,6 +56,7 @@ Add following test dependancies
 
 
 replace 
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -80,6 +81,7 @@ replace
 			</plugin>
 
 with -- which automatically generates the end point 
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -143,3 +145,4 @@ For further information, consult the [Java App Engine](https://developers.google
 To see all the available goals for the App Engine plugin, run
 
     mvn help:describe -Dplugin=appengine
+
