@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 import javax.inject.Named;
 
 import org.mford.gae.testAppv6.dao.impl.AnemometerDaoImpl;
+import org.mford.gae.testAppv6.entity.Anemometer;
 import org.mford.gae.testAppv6.entity.AnemometerReading;
 import org.mford.gae.testAppv6.entity.AnemometerSite;
 import org.mford.gae.testAppv6.entity.AnemometerSiteResponse;
@@ -54,9 +55,10 @@ public class WeatherStationEndPoint {
 			httpMethod=ApiMethod.HttpMethod.GET
 	)
 	public SitesResponse sites() {	
-		List<AnemometerSite> retVal = new ArrayList<AnemometerSite>();
+		List<Anemometer> retVal = new ArrayList<Anemometer>();
+		int i=0;
 		for (AnemometerSite val : AnemometerSite.values())
-			retVal.add(val);
+			retVal.add(new Anemometer(i++, val, val.getCode(), val.getLat(), val.getLng()));
 		return new SitesResponse(ResultStatus.Success(),retVal);
 	}
 

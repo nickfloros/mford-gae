@@ -15,13 +15,13 @@ public class SitesResponse {
 
 	private ResultStatus status;
 	
-	List<AnemometerSite> sites;
+	List<Anemometer> sites;
 
 	public SitesResponse() {
 		
 	}
 
-	public SitesResponse(ResultStatus status, List<AnemometerSite> sites) {
+	public SitesResponse(ResultStatus status, List<Anemometer> sites) {
 		super();
 		this.status = status;
 		this.sites = sites;
@@ -31,16 +31,16 @@ public class SitesResponse {
 	/**
 	 * @return the sites
 	 */
-	public List<AnemometerSite> getSites() {
+	public List<Anemometer> getSites() {
 		if (sites==null) 
-			sites = new ArrayList<AnemometerSite>();
+			sites = new ArrayList<Anemometer>();
 		return sites;
 	}
 
 	/**
 	 * @param sites the sites to set
 	 */
-	public void setSites(List<AnemometerSite> sites) {
+	public void setSites(List<Anemometer> sites) {
 		this.sites = sites;
 	}
 

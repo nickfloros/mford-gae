@@ -3,8 +3,6 @@
  */
 package org.mford.gae.testAppv6.entity;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
