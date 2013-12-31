@@ -81,7 +81,7 @@ replace
 			</plugin>
 
 with -- which automatically generates the end point 
-
+```
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -125,7 +125,7 @@ with -- which automatically generates the end point
                     </execution>
                 </executions>
             </plugin>
-            			
+```            			
 Requires [Apache Maven](http://maven.apache.org) 3.0 or greater, and JDK 6+ in order to run.
 
 To build, run
@@ -148,5 +148,6 @@ To see all the available goals for the App Engine plugin, run
 
 To deploy use
 
+```
   mvn appengine:update
-  
+```  
