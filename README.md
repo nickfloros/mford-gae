@@ -1,36 +1,36 @@
-App Engine Java Application
-Copyright (C) 2010-2012 Google Inc.
+App Engine Java Application Copyright (C) 2010-2012 Google Inc.
 
 ## Skeleton application for use with App Engine Java.
 
-
+```
 mvn archetype:generate \
 -DarchetypeGroupId=com.google.appengine.archetypes \
 -DarchetypeArtifactId=skeleton-archetype 
-
+```
  cd testAppv6
 
  edit pom.xml and change 
-
+```
                 <appengine.target.version>1.7.5</appengine.target.version>
-
- to 
+```
+ to
+ ``` 
                 <appengine.target.version>1.8.8</appengine.target.version>
-
+```
 change jvm version from 
-
+```
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
-
+```
 to 
-
-          <configuration>
-                <source>1.7</source>
-                <target>1.7</target>
-          </configuration>
-                                
+```
+  <configuration>
+    <source>1.7</source>
+  	<target>1.7</target>
+  </configuration>
+```                                
 add
  
 	<dependency>
