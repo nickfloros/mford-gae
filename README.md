@@ -11,18 +11,18 @@ mvn archetype:generate \
 
  edit pom.xml and change 
 ```
-                <appengine.target.version>1.7.5</appengine.target.version>
+  <appengine.target.version>1.7.5</appengine.target.version>
 ```
  to
  ``` 
-                <appengine.target.version>1.8.8</appengine.target.version>
+  <appengine.target.version>1.8.8</appengine.target.version>
 ```
 change jvm version from 
 ```
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
+  <configuration>
+    <source>1.6</source>
+    <target>1.6</target>
+  </configuration>
 ```
 to 
 ```
@@ -32,15 +32,15 @@ to
   </configuration>
 ```                                
 add
- 
+``` 
 	<dependency>
 		<groupId>com.google.appengine</groupId>
 		<artifactId>appengine-endpoints</artifactId>
 		<version>${appengine.target.version}</version>
 	</dependency>
-
+```
 Add following test dependancies 
-
+```
     <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
@@ -53,10 +53,10 @@ Add following test dependancies
         <version>1.9.0</version>
         <scope>test</scope>
     </dependency>
-
+```
 
 replace 
-
+```
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -79,52 +79,51 @@ replace
 				<artifactId>appengine-maven-plugin</artifactId>
 				<version>${appengine.target.version}</version>
 			</plugin>
-
+```
 with -- which automatically generates the end point 
 ```
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <webXml>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF/web.xml</webXml>
-                    <webResources>
-                        <resource>
-                        <directory>${basedir}/src/main/webapp/WEB-INF/</directory>
-                            <filtering>true</filtering>
-                            <targetPath>WEB-INF</targetPath>
-                            <excludes>
-                                <exclude>web.xml</exclude>
-                            </excludes>
-                        </resource>
-                        <resource>
-                            <directory>${project.build.directory}/generated-sources/appengine-endpoints</directory>
-                            <includes>
-                                <include>WEB-INF/*.discovery</include>
-                                <include>WEB-INF/*.api</include>
-                            </includes>
-                            <filtering>true</filtering>
-                        </resource>
-                    </webResources>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>com.google.appengine</groupId>
-                <artifactId>appengine-maven-plugin</artifactId>
-                <version>${appengine.target.version}</version>
-                <configuration>
-                    <enableJarClasses>false</enableJarClasses>
-                        <oauth2>false</oauth2>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>endpoints_get_discovery_doc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-war-plugin</artifactId>
+  <version>2.3</version>
+  <configuration>
+	  <webXml>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF/web.xml</webXml>
+		<webResources>
+	    <resource>
+	    <directory>${basedir}/src/main/webapp/WEB-INF/</directory>
+	      <filtering>true</filtering>
+	      <targetPath>WEB-INF</targetPath>
+	      <excludes>
+	      	<exclude>web.xml</exclude>
+	      </excludes>
+	    </resource>
+	    <resource>
+	      <directory>${project.build.directory}/generated-sources/appengine-endpoints</directory>
+	      <includes>
+	 		    <include>WEB-INF/*.discovery</include>
+	          <include>WEB-INF/*.api</include>
+	      </includes>
+	      <filtering>true</filtering>
+	    </resource>
+		</webResources>
+  </configuration>
+</plugin>
+<plugin>
+	<groupId>com.google.appengine</groupId>
+	<artifactId>appengine-maven-plugin</artifactId>
+	<version>${appengine.target.version}</version>
+	<configuration>
+	  <enableJarClasses>false</enableJarClasses>
+	  <oauth2>false</oauth2>
+	</configuration>
+	<executions>
+		<execution>
+	    <goals>
+	      <goal>endpoints_get_discovery_doc</goal>
+	    </goals>
+	  </execution>
+	</executions>
+</plugin>
 ```            			
 Requires [Apache Maven](http://maven.apache.org) 3.0 or greater, and JDK 6+ in order to run.
 
