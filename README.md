@@ -1,7 +1,9 @@
 ## Google app engine endpoints for weather application.
 
 It implements two restful services
+
 1 : Read all weather station details
+
 2 : Read weather station data.
 
 
