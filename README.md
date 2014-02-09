@@ -1,6 +1,12 @@
+## Google app engine endpoints for weather application.
+
+It implements two restful services
+1 : Read all weather station details
+2 : Read weather station data.
+
 App Engine Java Application Copyright (C) 2010-2012 Google Inc.
 
-## Skeleton application for use with App Engine Java.
+## Steps to create skeleton application for use with App Engine Java.
 
 ```
 mvn archetype:generate \
