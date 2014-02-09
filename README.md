@@ -2,8 +2,8 @@
 
 It implements two restful services
 
-- Read all weather station details
-- Read weather station data.
+- Read all weather station details.
+- Read weather data from a station.
 
 
 Steps to create skeleton application for use with App Engine Java.
